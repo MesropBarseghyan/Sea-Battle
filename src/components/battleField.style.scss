@@ -1,0 +1,186 @@
+//mockup
+.ship-divs{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(131, 124, 120);
+    cursor: pointer;
+    border: 1px solid darkgray;
+    &:hover{
+        background-color: rgb(96, 93, 90);
+    }
+}
+.forSmallShip{
+    display: flex;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+}
+
+//mockup
+
+.container{
+    .battleField-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        .playerField-container{
+            display:grid;
+            grid-template-columns: repeat(10,50px);
+            .playerField{
+                background-color: rgb(131, 126, 120);
+                aspect-ratio: 1;
+                border: 1px solid darkgray;
+                position: relative;
+            }
+        }
+        h3{
+            font-size: 25px;
+            width: 500px;
+            color: rgb(87, 86, 85);
+            font-family: monospace;
+        }
+    
+        .ships{
+            width: 500px;
+            height: auto;
+            background-color: rgb(131, 126, 120);
+            margin-top: 50px;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            column-gap: 35px;
+            margin-left: -50px;
+        }
+        .aiField-container{
+            position: relative;
+            display:grid;
+            height: 500px;
+            width: 500px;
+            grid-template-columns: repeat(10,50px);
+            .aifield{
+                background-color: rgb(131, 126, 120);
+                aspect-ratio: 1;
+                border: 1px solid darkgray;
+                cursor: pointer;
+                transition: .1s;
+                position: relative;
+                &:hover{
+                    background-color: rgb(96, 93, 90);
+                }
+            }
+                .big-ship{
+                    display: flex;
+                    width: 200px;
+                    height: 50px;
+                    position: absolute;
+                    left: 50px;
+                    top: 0;
+                    div{
+                        @extend .ship-divs
+                    }
+                }
+                .middle-ship1{
+                    display: flex;
+                    width: 150px;
+                    height: 50px;
+                    transform: rotate(180deg);
+                    position: absolute;
+                    left: 150px;
+                    bottom: 0;
+                    div{
+                        @extend .ship-divs
+                    }
+                }
+                .middle-ship2{
+                    display: flex;
+                    width: 150px;
+                    height: 50px;
+                    transform: rotate(90deg);
+                    position: absolute;
+                    left: 250px;
+                    top: 150px;
+                    div{
+                        @extend .ship-divs
+                    }
+                }
+                .small-ship1{
+                    @extend .forSmallShip;
+                    position: absolute;
+                    top:50px;
+                    right:0;
+                    div{
+                        @extend .ship-divs
+                    }
+                }
+                .small-ship2{
+                    @extend .forSmallShip;
+                    bottom:25px;
+                    right:-25px;
+                    transform: rotate(90deg);
+                    div{
+                        @extend .ship-divs
+                    }
+                }
+                .small-ship3{
+                    @extend .forSmallShip;
+                    top:125px;
+                    left:25px;
+                    transform: rotate(90deg);
+                    div{
+                        @extend .ship-divs
+                    }
+                }
+        }
+    }
+}
+.black{
+    background-color: rgb(58, 58, 58);
+}
+
+@media screen and (max-width:1000px){
+      .container{
+       .battleField-container{
+           justify-content: space-between;
+           column-gap: 70px;
+           .ships{
+               width: 400px;
+               column-gap: 32px;
+           }
+           .playerField-container{
+               grid-template-columns: repeat(10,40px);
+           }
+           .aiField-container{
+               grid-template-columns: repeat(10,40px);
+               height: 400px;
+               .big-ship{left: 40px;}
+               .middle-ship1{left: 130px;}
+               .middle-ship2{
+                   left: 260px;
+                   top: 170px;
+               }
+               .small-ship1{
+                   top:40px;
+                   right:20px;
+               }
+               .small-ship2{
+                   bottom:5px;
+                   right:-25px;
+               }
+               .small-ship3{
+                   top:105px;
+                   left:5px;
+               }
+           }
+           h3{
+               width: 400px;
+               font-size: 20px;
+           }
+       }
+      }
+      .ship-divs{
+        width: 40px;
+        height: 40px;
+      }
+    
+    }

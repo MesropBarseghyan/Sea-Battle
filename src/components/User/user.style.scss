@@ -1,0 +1,128 @@
+.ship-divs{
+    width: 50px;
+    height: 48px;
+    background-color: rgb(79, 77, 77);
+    border: 1px solid rgb(86, 86, 86);
+}
+
+.against-container{
+    text-align: center;
+    padding: 15px;
+    input{
+        height: 50px;
+        width: 250px;
+        padding: 3px;
+        font-size: 30px;
+        text-align: center;
+        background-color: rgb(165, 163, 163);
+        border-radius: 5px;
+    }
+    button{
+       height: 50px;
+       font-size: 30px;
+       padding: 3px;
+       padding-inline: 15px;
+       margin-left: 5px;
+       background-color: rgb(165, 163, 163);
+       border-radius: 5px;
+       cursor: pointer;
+       transition: .2s;
+       &:hover{
+         background-color: rgb(107, 106, 106);
+       }
+    }
+   .against{
+    margin-top: 70px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    column-gap: 30px;
+    h2{
+        font-size: 80px;
+        color: rgb(62, 61, 61);
+    }
+    span{
+        font-size: 50px;
+        font-weight: 600; 
+    }
+   }
+}
+
+.biggest-ship{
+    display: flex;
+    width: 200px;
+    background-color: rgb(79, 77, 77);
+    position: relative;
+    z-index: 1;
+    div{
+        @extend .ship-divs
+    }
+}
+.middle-ship{
+    display: flex;
+    width: 150px;
+    background-color: rgb(79, 77, 77);
+    position: relative;
+    z-index: 1;
+    div{
+        @extend .ship-divs
+    }
+}
+.small-ship{
+    display: flex;
+    width: 100px;
+    background-color: rgb(79, 77, 77);
+    position: relative;
+    z-index: 1;
+    div{
+        @extend .ship-divs
+    }
+}
+.smallest-ship{
+    width: 50px;
+    height: 48px;
+    background-color: rgb(79, 77, 77);
+    position: relative;
+    z-index: 1;
+}
+.rotate{
+    transform: rotate(90deg);
+    right:25px;
+    top: 25px;
+}
+.rotateForMiddle{
+    transform: rotate(90deg);
+    left:0;
+    top: 50px;
+}
+.lightblack{
+    background-color: rgb(41, 40, 40);
+    position: relative;
+    z-index: 10;
+    opacity: 0.9;
+}
+
+@media screen and (max-width:1000px){
+      .against-container{
+          .against{
+              margin-top: 50px;
+           }   
+      }
+      .ship-divs{
+          width: 40px;
+          height: 40px;
+       }
+       .biggest-ship{
+          width: 160px;
+      }
+      .middle-ship{
+          width: 120px;
+      }
+      .small-ship{
+          width: 80px;
+      }
+      .smallest-ship{
+          width: 40px;
+          height: 40px;
+      }
+    }
